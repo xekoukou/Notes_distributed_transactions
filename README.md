@@ -20,3 +20,14 @@ Specific actors might want to order their own part of their transaction. Having 
 
 
 Since both these types of time providers can replicated without loss of its properties, we are able to scale indefinitely as more transactions come into our system.
+
+
+
+
+# Acceptance of Inconsistencies
+
+1. A transaction to be complete requires that a number of distributed systems work together to update their state. As the number of agents increases, it becomes impractical to perform acid transactions.
+
+2. The percentage of inconsistencies and the problem they create differ from application to application. Some inconsistencies can be fixed and some cannot.
+
+Those two factors will determine the points where we would perform distributed transactions and where we will perform a best effort change of state with a possible healing if it is possible.
